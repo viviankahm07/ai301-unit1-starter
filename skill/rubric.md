@@ -34,7 +34,11 @@ will fail eval issues designed around that family.
 
 | Check | Evidence | Pass condition | Weight |
 |---|---|---|---|
-|  |  |  |  |
+| Maintainer Active | repo-facts block: maintainer first-response sample | at least 1 of the 5 sampled issues received an owner/member/collaborator response within 90 days | required |
+| Repo Active | repo-facts block + recent default-branch commit dates | At least 1 commit within the last 90 days | required |
+| Clear scope | issue body + comment thread | one clear, bounded task, has a concrete expected outcome with enough information to begin implementation and no unresolved design questions | required |
+| Issue unclaimed | repo-facts assignee info + comment thread | No assignee and nobody says they are currently working on it | required |
+
 
 ## Verdict rule
 
@@ -42,3 +46,5 @@ will fail eval issues designed around that family.
 unclear is treated. Example shape (write your own): "accept if every
 required check passes; preferred checks never change the verdict, they
 rank accepted issues; unclear counts as fail." -->
+
+Accept only if all required checks pass, reject if any required check fails. If a check comes out as unclear it counts as a fail. 
